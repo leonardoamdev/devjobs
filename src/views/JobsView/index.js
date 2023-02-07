@@ -12,12 +12,14 @@ const JobsView = () => {
   const dispatch = useDispatch();
   const { filter } = useSettings();
   const [filteredJobs, setFilteredJobs] = useState([]);
+  const [isSearched, setSearched] = useState(false);
   const { jobs, isLoading, isLoaded } = useSelector(state => state.job);
 
   const handleSearch = useCallback(() => {
     const filteredJobsArr = applyFilters(jobs, filter);
 
     setFilteredJobs(filteredJobsArr);
+    setSearched(true);
   }, [jobs, filter]);
 
   useEffect(() => {
@@ -41,7 +43,7 @@ const JobsView = () => {
                 <JobItem key={job.id} job={job} />
               ))}
             </div>
-            <Button className="self-center">Load More</Button>
+            {!isSearched && <Button className="self-center">Load More</Button>}
           </>
         )}
       </div>
