@@ -71,10 +71,11 @@ export const SettingsProvider = ({ settings, filter, children }) => {
   useEffect(() => {
     const restoredSettings = restoreSettings();
 
-    const defaultTheme =
-      restoredSettings?.theme === THEMES.DARK || isSystemDark
-        ? THEMES.DARK
-        : THEMES.LIGHT;
+    const defaultTheme = restoredSettings?.theme
+      ? restoredSettings?.theme
+      : !restoredSettings?.theme && isSystemDark
+      ? THEMES.DARK
+      : THEMES.LIGHT;
 
     setCurrentSettings({ theme: defaultTheme });
     setTheme(defaultTheme);

@@ -19,14 +19,13 @@ const Toggle = ({
         type="checkbox"
         id={id}
         className="sr-only peer"
-        defaultChecked={isChecked}
-        onChange={onToggle}
+        onChange={() => onToggle(!isChecked)}
         {...rest}
       />
       <div
         className={classNames(
           "w-12 h-6 bg-white peer-focus:ring-3.5 rounded-full peer after:content-[''] after:absolute after:top-[5px] after:left-[5px] after:bg-primary after:rounded-full after:h-3.5 after:w-3.5 after:transition-all hover:after:bg-primary-light",
-          { 'peer-checked:after:translate-x-[170%]': isChecked },
+          { 'after:translate-x-[170%]': isChecked },
         )}
       ></div>
       {label && (

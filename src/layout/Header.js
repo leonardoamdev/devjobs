@@ -7,8 +7,8 @@ import useSettings from 'src/hooks/useSettings';
 const Header = () => {
   const { settings, saveSettings } = useSettings();
 
-  const handleChangeTheme = e => {
-    saveSettings({ theme: e.target.checked ? THEMES.DARK : THEMES.LIGHT });
+  const handleChangeTheme = isChecked => {
+    saveSettings({ theme: isChecked ? THEMES.DARK : THEMES.LIGHT });
   };
 
   return (
