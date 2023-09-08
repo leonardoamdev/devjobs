@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# DevJobs Assignment
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Used Technologies & Libraries
+React 18, Tailwind CSS, Redux, Redux-Thunk, Lodash, classnames, React Hook/Media Query, axios, axios-mock-adapter
 
 ## Available Scripts
 
